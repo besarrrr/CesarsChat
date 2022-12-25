@@ -9,6 +9,13 @@ const UserSchema = new Schema(
             trim: true
 
         },
+    },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true,
+        },
+        id: false,
     }
 );
 

@@ -13,6 +13,13 @@ const MessageSchema = new Schema(
         type: String,
         required: true,
       },
+    },
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true,
+        },
+        id: false,
     }
 );
 
