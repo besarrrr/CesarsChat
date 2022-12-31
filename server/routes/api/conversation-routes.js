@@ -5,15 +5,12 @@ const {
     getAllConversations
 } = require('../../controllers/conversation-controller');
 
-// Get all 
 
-router.route('/')
-.get(getAllConversations)
-
-// Create a Message
+// Create a Conversation using User ID, and get conversations using User Id
 
 router.route('/:id')
 .post(createConversation)
+.get(getAllConversations)
 
 
 module.exports = router;
