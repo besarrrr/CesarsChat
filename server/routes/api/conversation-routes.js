@@ -8,9 +8,12 @@ const {
 
 // Create a Conversation using User ID, and get conversations using User Id
 
-router.route('/:id')
+router.route('/')
 .post(createConversation)
 .get(getAllConversations)
+
+
+
 
 
 module.exports = router;

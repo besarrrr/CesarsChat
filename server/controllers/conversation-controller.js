@@ -1,4 +1,4 @@
-const { User, Message, Conversation } = require('../models');
+const {Conversation } = require('../models');
 
 const conversationController = {
 
@@ -10,16 +10,16 @@ const conversationController = {
     .then((conversationData) => res.json(conversationData))
     .catch((err) => res.status(400).json(err))
 
-},
+  },
 
 
     // Creat Conversation
 
     createConversation(req, res) {
-        const { users, messages } = req.body;
+      
         const conversation = new Conversation({
-          users,
-          messages
+          members: [req.body.senderId, req.body.receiverId]
+          
         });
         conversation.save();
       

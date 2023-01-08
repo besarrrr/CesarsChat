@@ -3,6 +3,10 @@ const { Schema, model } = require('mongoose');
 const MessageSchema = new Schema(
     {
 
+    conversationId: {
+        type: String,
+    },
+
     messageText: {
         type: String,
         required: true,
