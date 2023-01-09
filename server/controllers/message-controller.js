@@ -31,7 +31,7 @@ const messageController = {
         .then(({_id}) => {
             return User.findOneAndUpdate(
                 { _id: params.userId },
-                { $push: { thoughts: _id } },
+                { $push: { messages: _id } },
                 { new: true }
               );
         })
@@ -50,7 +50,7 @@ const messageController = {
     updateMessage({ params, body }, res) {
         Message.findOneAndUpdate(
           { _id: params.id },
-          { $set: { thoughts: body } },
+          { $set: { message: body } },
           { new: true, runValidators: true }
         )
           .then(messageData => {
